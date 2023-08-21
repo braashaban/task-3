@@ -132,15 +132,23 @@ header ul a:hover {
   height: 210px;
   border-radius: 50%;
   background-color: #2c3e50;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .img-hero img {
-  width: 220px;
+  width: 210px;
   position: absolute;
   bottom: 0;
-  top: -20px;
+  top: -12px;
   left: -6px;
-  border-radius: 40%;
+  border-radius: 42%;
+
+  transition: 1.5s transform;
+}
+
+.img-hero:hover img {
+  transform: scale(1.1);
 }
 
 .img-hero .circle:hover {
@@ -149,7 +157,6 @@ header ul a:hover {
 }
 
 .hero h2 {
-
   color: white;
   font-size: 40px;
 }
@@ -188,9 +195,11 @@ header ul a:hover {
   left: 52px;
   top: 50%;
 }
+
 .icon:hover {
   animation: moving 1.5s linear infinite;
 }
+
 header p {
   color: #fefefe;
   font-size: 22px;
@@ -243,9 +252,9 @@ header p {
   padding: 20px;
   border-radius: 10px;
   transition: 1.5s all ease-in;
-  background-color: #35bbcaac;
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
 }
 
 .main-portfolio .circle-img .card {
@@ -255,12 +264,14 @@ header p {
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+    0 6px 15px 0 rgba(0, 0, 0, 0.39);
 }
 
 .main-portfolio .circle-img .card img,
 .main-portfolio .circle-img:hover {
   transform: translateY(-10px);
+  transform: scale(1.1);
 }
 
 .one {
@@ -324,16 +335,16 @@ header p {
   max-width: 400px;
   transition: 1.2s all ease-in-out;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4),
+    0 6px 20px 0 rgba(0, 0, 0, 0.59);
+  transition: 2.5s transform;
+  transform: scale(0.9);
 }
 
 .about p:hover {
   transform: translateY(-10px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
-  0 6px 20px 0 rgba(0, 0, 0, 0.39);
-
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
 }
 
 .about button {
@@ -347,14 +358,15 @@ header p {
   border: 2px solid #fff;
   color: #fff;
   font-size: 18px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  transition: 2.5s transform;
 }
 
 .about button:hover {
   background-color: #fff;
   color: #35bbca;
+  transform: scale(0.9);
 }
 
 /*  start contact */
@@ -367,7 +379,8 @@ header p {
   color: #000;
   padding: 20px;
   margin-top: 50Px;
-
+  position: relative;
+  overflow: hidden;
 }
 
 .contact .icon .star {
@@ -377,7 +390,6 @@ header p {
 .contact .icon::after,
 .contact .icon::before {
   background-color: #000;
-
 }
 
 .contact form {
@@ -387,6 +399,47 @@ header p {
   margin-top: 20px;
   padding: 10px 0;
   width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+/* @keyframes animate {
+  0%{
+  transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }}
+  .contact form:before{
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 500px;
+    background-image: repeating-conic-gradient(#ddeeee 0deg 10deg, #fed673 10deg 10deg, #eee 60deg 40deg);
+    animation: animate 6s linear infinite;
+    animation-delay: -1s ;
+
+    }
+    .contact form:after{
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 500px;
+      background-image: repeating-conic-gradient(#ddeeee 0deg 10deg, #fed673 10deg 10deg, #eee 60deg 40deg);
+      animation: animate 6s linear infinite;
+      animation-delay: -1s ;
+   
+      overflow: hidden;
+      } */
+
+
+
+.contact form :hover {
+  transition: 2.5s transform;
+  transform: scale(0.9);
 }
 
 .contact form input {
@@ -397,13 +450,11 @@ header p {
   border: none;
   border-bottom: 1px solid rgba(221, 221, 238, 0.858);
   margin-bottom: 15px;
-  
 }
 
 .contact form input::placeholder,
 .contact form textarea::placeholder {
   font-size: 17px;
-
 }
 
 .contact form textarea {
@@ -425,8 +476,14 @@ header p {
   margin-top: 10px;
   font-size: 17px;
   transition: 0.8s;
-  box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+@media(max-width:900px){
+  
+.contact form{
+  width: 100%;
+}
 }
 
 .contact form button:hover {
@@ -485,12 +542,14 @@ footer .social-media {
   align-items: center;
   border-radius: 50%;
   border: 1px solid #fff;
-  transition: 0.8s;
+  transition: 1.8s ease-in-out;
+
 }
 
 footer .social-media:hover {
   background-color: #fff;
   border: 1px solid #000;
+
 }
 
 footer .social-media a {
